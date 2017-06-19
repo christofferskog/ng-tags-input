@@ -1,0 +1,17 @@
+<div class="ti-wrapper">
+  <label class="label" [for]="id">{{label}}</label>
+  <ul class="ti-tags">
+    <li class="ti-tag" [ngClass]="{'marked-danger': tag.isMarkedForDelete}" *ngFor="let tag of model; let i = index; trackBy:trackByFn">
+      <tag [tag]="tag" [isTagEditable]="isTagsEditable" [tagLabel]="tagLabel" (tagChange)="updateTag($event, tag)" (tagRemove)="removeTag($event)"></tag>
+    </li>
+  </ul>
+  <div class="form-control ti-tag-control">
+    <input #input class="input ti-tag-control-input" [(ngModel)]="currentTag" [ngModelOptions]="{standalone: true}" 
+      (focus)="focusChange(); toggleDropdown()" (blur)="focusChange()" (paste)="onPaste($event)" 
+      (keydown.enter)="addTag(); $event.preventDefault()" (keyup)="currentTagChange($event)" 
+      [placeholder]="placeholder" [id]="id" [disabled]="disabled">
+  </div>
+  <dropdown *ngIf="options?.length" [isOpen]="isDropdownOpen" [model]="model" [options]="options" [tagLabel]="tagLabel" (optionClicked)="addFromDropdown($event)">
+    <ng-template let-option>{{option[tagLabel]}}</ng-template>
+  </dropdown>
+</div>

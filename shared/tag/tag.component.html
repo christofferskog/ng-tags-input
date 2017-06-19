@@ -1,0 +1,4 @@
+<div class="ti-tag-wrapper">
+  <span #tagLabelElement class="ti-tag-label" (blur)="updateTag()" [attr.contenteditable]="isTagEditable">{{tag[tagLabel]}}</span>
+  <span class="ti-tag-remove-icon" (click)="tagRemove.emit(tag); $event.stopPropagation()"><i class="fa fa-remove"></i></span>
+</div>

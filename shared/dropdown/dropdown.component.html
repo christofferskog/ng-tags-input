@@ -1,0 +1,7 @@
+<div class="dropdown-wrapper" [ngClass]="{open: isOpen}">
+  <ul class="dropdown">
+    <li class="dropdown-option" [ngClass]="{selected: isExistingInModel(option)}" *ngFor="let option of options; let i = index; trackBy:trackByFn" (click)="emitOption(option)">
+      <ng-template [ngTemplateOutlet]="templateRef" [ngOutletContext]="{$implicit: option}"></ng-template>
+    </li>
+  </ul>
+</div>

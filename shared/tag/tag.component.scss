@@ -1,0 +1,12 @@
+@import './src/assets/styles/utils/_exports';
+
+.ti-tag-wrapper {}
+
+.ti-tag-label {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: bottom;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
