@@ -64,7 +64,6 @@ export class TagsInputComponent implements ControlValueAccessor, OnDestroy, OnIn
   @Output() tagUpdated: EventEmitter<any> = new EventEmitter<any>();
   @Output() tagRemoved: EventEmitter<any> = new EventEmitter<any>();
   @Output() tagInvalid: EventEmitter<any> = new EventEmitter<any>();
-  @Output() ngModelChange: EventEmitter<any> = new EventEmitter<any>();
 
   @ViewChild('tagsInput') tagsInput: ElementRef;
   @ViewChild('input') input: ElementRef;
